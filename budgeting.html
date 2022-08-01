@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--Language set English-->
+<html lang="en">
+<!--Header with Meta data-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Page title-->
+    <title>My Budget</title>
+</head>
+
+<!--On load of page - see if page already has session storage data-->
+<body onload="pushStart()">
+    <!--Underline heading 1 and  show main heading-->
+    <h1><u>My income and expenses</u></h1>
+
+    <!--All the aspects regarding income-->
+    <h2>My Income</h2>
+    <!--Show all the income and unhide button to add income-->
+    <button onclick="incomeParagraph()">Show Income</button>
+    <p id="income_items"></p>
+    <!--Button to add income, update session storage and refresh page-->
+    <button onclick="addIncome()" id="addIncomeId">Add an income item</button>
+
+    <!--All the expense items-->
+    <h2>My Expenses</h2>
+    <!--Show all the expense and unhide button to add expenses-->
+    <!--Also Unhide the disposable income section-->
+    <button onclick="expenseParagraph()">Show Expense</button>
+    <p id="expense_items"></p>
+    <!--Add an expense item to the session storage and reload page-->
+    <button onclick="addExpense()" id="addExpenseId">Add an expense item</button>
+
+    <!--Section about expense items-->
+    <!--Placed inside div to be hidden because calculations will only be accurate if total income and expenses was first calculated-->
+    <div id="disposable_hide">
+        <h2>Disposable income</h2>
+        <!--Calculate the disposable income and show in paragraph-->
+        <button onclick="disposableIncome()">Show my disposable income</button>
+        <p id="disposableParagraph"></p>
+        <!--Add an amount that want to save, calculated how much is left after money is saved-->
+        <!--Save both results in session storage-->
+        <button onclick="saveAmount()">Amount to add to savings</button>
+    </div>
+
+    <!--Add JS file for calulations and functions-->
+    <script type="text/javascript" src="budgeting.js"></script>
+</body>
+
+</html>

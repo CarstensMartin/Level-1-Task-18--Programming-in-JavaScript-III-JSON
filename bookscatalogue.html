@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title of the program-->
+    <title>My Books</title>
+</head>
+
+<!--On Load - the existing books in the session should load-->
+
+<body onload="myBooks(), myBooksChange()">
+
+    <!--Headers of the software-->
+    <h1>My book library:</h1>
+
+    <h2>Capture new book in library</h2>
+
+    <!--Form to complete detail of book
+    Labels to table items and input boxes to capture information-->
+    <form>
+        <div>
+            <label> Author: </label><br/>
+            <input type="text" name="author" id="author" required>
+        </div>
+        <div> 
+            <label> Title: </label><br/>
+            <input type="text" name="title" id="title" required> 
+        </div>
+        <div>
+            <label> Genre: </label><br/>
+            <input type="text" name="genre" id="genre" required>
+        </div>
+        <div>
+            <label> Price: </label><br/>
+            <input type="text" name="price" id="price" required>
+        </div>
+        <div>
+            <label> Published date: </label><br/>
+            <input type="text" name="publishDate" id="publishDate" required>
+        </div>
+        <div>
+            <label> Description: </label><br/>
+            <input type="text" name="description" id="description" required>
+        </div>
+        <div>
+            <label> Personal Review: </label><br/>
+            <input type="text" name="review" id="review" required>
+        </div>
+
+        <!--Once done capturing - using a function with the on click button, to capture the information-->
+        <button onclick="addBook()">Add a new Book</button>
+    </form> <br>
+
+    <!--Hide this div if no books are captured yet-->
+    <div id="hideOnStart">
+        <h2>Detail about books I have read:</h2>
+
+        <!--List of books that are read - select one to see the information-->
+        <select id="bookList" onchange="ChangeActiveUser(this.value)">
+            <option value="">--Select Book--</option>
+        </select>
+        <!--Display the information of the selected book in this paragraph-->
+        <p id="readBooks"></p>
+
+        <h2>Make changes to a book</h2>
+
+        <!--Form to capture the changes to a book-->
+        <form>
+            <div>
+                <label> Author: </label><br/>
+                <input type="text" name="author" id="authorNew" required>
+            </div>
+            <div>
+                <label> Title: </label><br/>
+                <input type="text" name="titleNew" id="titleNew" required>
+            </div>
+            <div>
+                <label> Genre: </label><br/>
+                <input type="text" name="genreNew" id="genreNew" required>
+            </div>
+            <div>
+                <label> Price: </label><br/>
+                <input type="text" name="priceNew" id="priceNew" required>
+            </div>
+            <div>
+                <label> Published date: </label><br/>
+                <input type="text" name="publishDateNew" id="publishDateNew" required>
+            </div>
+            <div>
+                <label> Description: </label><br/>
+                <input type="text" name="descriptionNew" id="descriptionNew" required>
+            </div>
+            <div>
+                <label> Personal Review: </label><br/>
+                <input type="text" name="reviewNew" id="reviewNew" required>
+            </div>
+            <!--Select the book in which the changes will take place-->
+            <div>
+                <label>Select the book in which the detail will change:</label><br/>
+                <select id="bookListChange">
+                    <option value="">--Select Book--</option>
+                </select>
+                <!--Submit button for the changes-->
+                <button onclick="changeBook()">Change</button>
+            </div>
+        </form>
+    </div>
+
+    <!--Link the Javascript file-->
+    <script type="text/javascript" src="bookscatalogue.js"></script>
+</body>
+
+</html>
